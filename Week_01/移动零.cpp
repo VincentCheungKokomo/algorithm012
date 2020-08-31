@@ -1,3 +1,6 @@
+#include <iostream>
+#include <vector>
+
 class Solution {
     public:
     // 非零元素待插入位置

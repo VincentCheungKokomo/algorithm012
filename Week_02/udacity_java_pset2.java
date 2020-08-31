@@ -51,7 +51,7 @@ if (weekday >= 1 && weekday <= 5 && !holiday) {
 int dayOfWeek;
 String Schedule;
 
-Switch (dayOfWeek) {
+switch (dayOfWeek) {
     case 1 : Schedule = "Gym in the morning.";
         break;
     case 2: Schedule = "Class after work.";
@@ -82,9 +82,9 @@ public void println(String x) {
     newLine();
 }
 
-public <return type> <function name> () {
-    <block of code>
-}
+// public <return type> <function name> () {
+//     <block of code>
+// }
 
 public void chorus() {
     System.out.println("Once I had a love and it was a gas");
@@ -93,7 +93,7 @@ public void chorus() {
     System.out.println("Mucho mistrust, love's gone behind");
 }
 
-boolean playButton = ?;
+boolean playButton = false;
 
 public void playMusic(boolean playButton) {
     if (playButton) {
@@ -181,4 +181,65 @@ public int rollDice(int sides) {
     // return statement
     return randomInt;
 }
+
+// Martingale strategy
+public int martingale(){
+    int money = 1000;
+    int target = 1200;
+    int bet = 10;
+    while (money > bet) {
+        if (money >= target) 
+            break;
+        boolean win = play();
+        if (win) {
+            money += bet;
+            bet = 10;
+        } else {
+            money -= bet;
+            bet *= 2;
+        }
+    }
+    return money;
+}
+
+String [] newsOutlet = {'a', 'b', 'c', 'd', 'e',
+                        'f', 'g', 'h', 'i', 'j'};
+double lucky = Math.random();
+lucky *= 10;
+int luckyIndex = (int) lucky;
+System.out.println(newsOutlet[luckyIndex]);
+
+public double search(double[] speed) {
+    int size = speed.length;
+    double min = speed[0];
+    for (int i = 1; i < size; i++) {
+        if (speed[i] < min) {
+            min = speed[i];
+        }
+    }
+    return min;
+}
+
+public String findLongestName(String [] names) {
+    int size = names.length; // 数组的长度
+    String longest = names[0];
+    for (int i = 1; i < size; i++) {
+        if (names[i].length() > longest.length()) {
+            longest = names[i];
+        }
+    }
+    return longest;
+}
+
+public static double studentAverage(int [][] grades, int student) {
+    int total = 0;
+    int subjects = grades.length;
+    for (int i=0; i<subjects; i++) {
+        total += grades[i][student];
+    }
+    double average = total / (double)subjects;
+    return average;
+}
+
+
 
